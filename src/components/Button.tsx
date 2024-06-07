@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 
 const MyComponent = () => {
@@ -19,7 +21,7 @@ const MyComponent = () => {
     };
 
     return (
-        <button onClick={addToCart}>Send Event</button>
+        <button className='bg-green-500 p-4 rounded cursor-pointer' onClick={addToCart}>Send Event</button>
     );
 };
 
