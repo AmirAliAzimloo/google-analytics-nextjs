@@ -5,7 +5,7 @@ import GAButton from "@/components/GAButton";
 import { useRouter } from "next/navigation";
 
 
-export default function Home() {
+export default function Default() {
   const router = useRouter();
 
   return (
@@ -13,6 +13,7 @@ export default function Home() {
         <GAButton />
     <Button title='Open HamburgerMenu' onClick={()=>{
       router.push('/hamburgerMenu')
+      
       }} />
 
       </div>

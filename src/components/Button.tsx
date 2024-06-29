@@ -1,28 +1,14 @@
-'use client';
+import { FC } from "react";
 
-import React from 'react';
+interface IButtonProps{
+    onClick:()=>void;
+    title:string;
+}
 
-const MyComponent = () => {
-    const event = ({ action, category, label, value }: any) => {
-        (window as any).gtag('event', action, {
-            event_category: category,
-            event_label: label,
-            value: value,
-        });
-    };
+const Button:FC<IButtonProps> = ({onClick,title}) => {
+  return (
+    <button className='bg-red-500 p-4 rounded cursor-pointer' onClick={onClick}>{title}</button>
+  )
+}
 
-    const addToCart = () => {
-        event({
-            action: 'add_to_cart',
-            category: 'ecommerce',
-            label: 'Item added to cart',
-            value: 'Tesla',
-        });
-    };
-
-    return (
-        <button className='bg-green-500 p-4 rounded cursor-pointer' onClick={addToCart}>Send Event</button>
-    );
-};
-
-export default MyComponent;
+export default Button
